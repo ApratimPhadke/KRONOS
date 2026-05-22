@@ -34,25 +34,21 @@ The project implements a complete low-level RTOS scheduler architecture includin
 
 ### Kernel startup and task initialization
 
-![Kernel Startup](./assets/kernel_startup.png)
-
----
-
-### SysTick handler debugging
-
-![SysTick Debugging](./assets/systick_debug.png)
+<img width="1919" height="1143" alt="image" src="https://github.com/user-attachments/assets/86b05d6f-4680-4b03-9cf5-ae331e70e6d6" />
 
 ---
 
 ### Successful SysTick execution
 
-![SysTick Working](./assets/systick_working.png)
+<img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/64f7c17b-58b3-4d00-9f75-8de6eb6aa398" />
+
 
 ---
 
 ### Final multitasking execution
 
-![Final RTOS Output](./assets/final_output.png)
+<img width="1917" height="1140" alt="image" src="https://github.com/user-attachments/assets/490ff06b-fd2d-402c-8c0b-07c9e0b89705" />
+
 
 ---
 

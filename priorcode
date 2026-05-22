@@ -1,0 +1,81 @@
+/*#include<stdint.h>
+#include <stdint.h>
+
+typedef enum IRQn
+{
+    NonMaskableInt_IRQn   = -14,
+    HardFault_IRQn        = -13,
+    MemoryManagement_IRQn = -12,
+    BusFault_IRQn         = -11,
+    UsageFault_IRQn       = -10,
+    SVCall_IRQn           = -5,
+    DebugMonitor_IRQn     = -4,
+    PendSV_IRQn           = -2,
+    SysTick_IRQn          = -1,
+} IRQn_Type;
+
+#define __CM4_REV                 0x0001
+#define __MPU_PRESENT             1
+#define __NVIC_PRIO_BITS          4
+#define __Vendor_SysTickConfig    0
+
+#include "core_cm4.h"
+//defining a task control block
+#define MAX_TASK 4
+#define TASK_STACK_SIZE 256
+typedef enum{
+  TASK_READY = 0,
+  TASK_RUNNING = 1,
+  TASK_BLOCKED = 2,
+}TaskState;
+typedef struct{
+  uint32_t *sp;
+  uint32_t stack[TASK_STACK_SIZE];
+  TaskState state;
+  uint8_t priority;
+  uint32_t wake_tick;
+  const char *name;
+}TCB_t;
+//initialising the stack frame for each task 
+void kronos_task_init(TCB_t *tcb , void (*task_fn)(void),const char *name){
+  tcb->name;
+  tcb->state= TASK_READY;
+  tcb->priority= 5;
+  tcb->wake_tick = 0;
+  uint32_t *top = &tcb->stack[TASK_STACK_SIZE-1];
+  *top-- = 0x01000000;
+  *top-- =(uint32_t)task_fn;
+  *top-- = 0xFFFFFFFD;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  *top-- = 0x00000000;
+  tcb->sp= top+1;
+}
+//Configure SysTick to tick every 1 ms
+#define SYSTICK_LOAD_1MS (16000 - 1)
+void systick_init(void){
+  SysTick->CTRL=0;
+  SysTick->LOAD = SYSTICK_LOAD_1MS;
+  SysTick->VAL = 0;
+  SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_TICKINT_Msk | SysTick_CTRL_ENABLE_Msk;
+}volatile uint32_t g_tick = 0;
+void SysTick_Handler(void){
+  g_tick++;
+}
+
+int main()
+{
+  while(1){};
+  return 0;
+}
+*/

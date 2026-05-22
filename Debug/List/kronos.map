@@ -1,0 +1,405 @@
+###############################################################################
+#
+# IAR ELF Linker V9.70.4.588/W64 for ARM                  23/May/2026  00:33:15
+# Copyright 2007-2026 IAR Systems AB.
+#
+#    Output file  =  D:\Embedded Projects\KRONOS\Debug\Exe\kronos.out
+#    Map file     =  D:\Embedded Projects\KRONOS\Debug\List\kronos.map
+#    Command line =
+#        -f "D:\Embedded Projects\KRONOS\Debug\Exe\kronos.out.rsp"
+#        ("D:\Embedded Projects\KRONOS\Debug\Obj\context_switch.o" "D:\Embedded
+#        Projects\KRONOS\Debug\Obj\cstartup_M.o" "D:\Embedded
+#        Projects\KRONOS\Debug\Obj\main.o" "D:\Embedded
+#        Projects\KRONOS\Debug\Obj\mpu.o" "D:\Embedded
+#        Projects\KRONOS\Debug\Obj\scheduler.o" "D:\Embedded
+#        Projects\KRONOS\Debug\Obj\systick.o" "D:\Embedded
+#        Projects\KRONOS\Debug\Obj\tasks.o" "D:\Embedded
+#        Projects\KRONOS\Debug\Obj\@@kronos.o" --no_out_extension -o
+#        "D:\Embedded Projects\KRONOS\Debug\Exe\kronos.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        "D:\Embedded Projects\KRONOS\Debug\List\kronos.map" --config
+#        C:\iar\ewarm-9.70.4\arm\config\linker\ST\stm32f407xG.icf --semihosting
+#        --entry __iar_program_start --vfe --text_out locale --cpu=Cortex-M4
+#        --fpu=None) --diagnostics_format=sarif_stdout --dependencies=n
+#        "D:\Embedded Projects\KRONOS\Debug\Exe\kronos.out.iar_deps"
+#        --dynamic_output "D:\Embedded
+#        Projects\KRONOS\Debug\Exe\kronos.out.iar_dynout"
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 {  ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x80f'ffff] {  ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P4":  place in [from 0x2000'0000 to 0x2001'bfff] |
+                [from 0x2001'c000 to 0x2001'ffff] {
+           rw,  block CSTACK,  block HEAP };
+initialize by copy {  rw };
+
+No sections matched the following patterns:
+
+  ro section application_specific_ro  in "P2"
+  section .backup_sram                in "P5"
+  section .ccram                      in "P3"
+
+
+  Section            Kind         Address  Alignment    Size  Object
+  -------            ----         -------  ---------    ----  ------
+"A0":                                                   0x40
+  .intvec            ro code   0x800'0000          4    0x40  vector_table_M.o [4]
+                             - 0x800'0040               0x40
+
+"P1":                                                 0x2318
+  .text              ro code   0x800'0040          4   0xeb6  xprintffull_nomb.o [2]
+  .text              ro code   0x800'0ef6          2    0x2a  copy_init3.o [4]
+  .text              ro code   0x800'0f20          4    0x16  strchr.o [4]
+  .text              ro code   0x800'0f36          2     0x2  vectortrap_M.o [4]
+  .text              ro code   0x800'0f38          4    0x40  xfail_s.o [2]
+  .text              ro code   0x800'0f78          4    0x36  strlen.o [4]
+  .text              ro code   0x800'0fb0          4    0x58  memchr.o [4]
+  .text              ro code   0x800'1008          4    0xa6  ABImemcpy.o [4]
+  .text              ro code   0x800'10b0          4    0x70  frexp.o [3]
+  .text              ro code   0x800'1120          4    0x34  DblCmpLe.o [3]
+  .text              ro code   0x800'1154          4    0x34  DblCmpGe.o [3]
+  .text              ro code   0x800'1188          4   0x13a  ldexp.o [3]
+  .text              ro code   0x800'12c4          4    0x36  DblToS32.o [3]
+  .text              ro code   0x800'12fc          4    0x22  S32ToDbl.o [3]
+  .text              ro code   0x800'1320          4   0x24e  DblAddSub.o [3]
+  .text              ro code   0x800'1570          4   0x246  DblDiv.o [3]
+  .text              ro code   0x800'17b8          4    0x22  DblToU32.o [3]
+  .text              ro code   0x800'17dc          4    0x1c  U32ToDbl.o [3]
+  .text              ro code   0x800'17f8          4   0x1aa  DblMul.o [3]
+  .text              ro code   0x800'19a4          4   0x230  I64DivMod.o [4]
+  .text              ro code   0x800'1bd4          2     0x6  abort.o [2]
+  .text              ro code   0x800'1bdc          4     0x2  I64DivZer.o [4]
+  .text              ro code   0x800'1be0          4    0x14  exit.o [5]
+  .text              ro code   0x800'1bf4          4    0x7c  iarttio.o [5]
+  .text              ro code   0x800'1c70          4     0x8  XShttio.o [2]
+  .text              ro code   0x800'1c78          4   0x14e  @@kronos.o [1]
+  .text              ro code   0x800'1dc8          4    0x5c  tasks.o [1]
+  .text              ro code   0x800'1e24          4    0x28  printf.o [2]
+  .text              ro code   0x800'1e4c          4   0x144  scheduler.o [1]
+  .text              ro code   0x800'1f90          4   0x104  main.o [1]
+  .text              ro code   0x800'2094          4    0x64  systick.o [1]
+  .text              ro code   0x800'20f8          4    0x88  context_switch.o [1]
+  .text              ro code   0x800'2180          2     0x2  mpu.o [1]
+  .text              ro code   0x800'2182          2    0x38  zero_init3.o [4]
+  .text              ro code   0x800'21bc          4    0x28  data_init.o [4]
+  .text              ro code   0x800'21e4          4    0x22  cmain.o [4]
+  .text              ro code   0x800'2206          2     0x4  low_level_init.o [2]
+  .text              ro code   0x800'220a          2     0x4  exit.o [2]
+  .text              ro code   0x800'2210          4     0x4  cexit.o [4]
+  .text              ro code   0x800'2214          4     0xa  cexit_2.o [4]
+  .text              ro code   0x800'221e          2    0x22  iarwrite.o [5]
+  .iar.init_table    const     0x800'2240          4    0x24  - Linker created -
+  .text              ro code   0x800'2264          2    0x20  putchar.o [2]
+  .text              ro code   0x800'2284          2    0x10  write.o [5]
+  .text              ro code   0x800'2294          2    0x1e  dwrite.o [5]
+  .text              ro code   0x800'22b2          2    0x20  iarwstd.o [5]
+  .text              ro code   0x800'22d4          4    0x1e  cstartup_M.o [1]
+  .text              ro code   0x800'22f2          2    0x16  xprout.o [2]
+  .rodata            const     0x800'2308          4    0x10  main.o [1]
+  .rodata            const     0x800'2318          4    0x10  tasks.o [1]
+  .rodata            const     0x800'2328          4    0x10  tasks.o [1]
+  .rodata            const     0x800'2338          4    0x10  tasks.o [1]
+  .rodata            const     0x800'2348          4     0x8  main.o [1]
+  .rodata            const     0x800'2350                0x0  zero_init3.o [4]
+  .rodata            const     0x800'2350                0x0  copy_init3.o [4]
+  Initializer bytes  const     0x800'2350          4     0x8  <for P4 s0>
+                             - 0x800'2358             0x2318
+
+"P4", part 1 of 3:                                       0x8
+  P4 s0                       0x2000'0000                0x8  <Init block>
+    .data            inited   0x2000'0000          4     0x8  XShttio.o [2]
+                            - 0x2000'0008                0x8
+
+"P4", part 2 of 3:                                    0x106c
+  .bss               zero     0x2000'0008          4  0x1040  scheduler.o [1]
+  .bss               zero     0x2000'1048          4     0x4  scheduler.o [1]
+  .bss               zero     0x2000'104c          4     0x4  scheduler.o [1]
+  .bss               zero     0x2000'1050          4     0x4  scheduler.o [1]
+  .bss               zero     0x2000'1054          4     0x4  scheduler.o [1]
+  .bss               zero     0x2000'1058          4     0x4  scheduler.o [1]
+  .bss               zero     0x2000'105c          4     0x4  scheduler.o [1]
+  .bss               zero     0x2000'1060          4     0x4  scheduler.o [1]
+  .bss               zero     0x2000'1064          4     0x4  scheduler.o [1]
+  .bss               zero     0x2000'1068          4     0x4  systick.o [1]
+  .bss               zero     0x2000'106c          4     0x4  xfail_s.o [2]
+  .bss               zero     0x2000'1070                0x1  scheduler.o [1]
+  .bss               zero     0x2000'1071                0x1  scheduler.o [1]
+  .bss               zero     0x2000'1072                0x1  scheduler.o [1]
+                            - 0x2000'1073             0x106b
+
+"P4", part 3 of 3:                                    0x2000
+  CSTACK                      0x2000'1078          8  0x2000  <Block>
+    CSTACK           uninit   0x2000'1078             0x2000  <Block tail>
+                            - 0x2000'3078             0x2000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'2358   0x80f'ffff  0xf'dca8
+  0x2000'1074  0x2000'1077       0x4
+  0x2000'3078  0x2001'bfff  0x1'8f88
+  0x2001'c000  0x2001'ffff    0x4000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x106b:
+          0x2000'0008  0x106b
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x8:
+           0x800'2350     0x8
+    1 destination range, total size 0x8:
+          0x2000'0000     0x8
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+command line/config:
+    ---------------------------------------------
+    Total:
+
+D:\Embedded Projects\KRONOS\Debug\Obj: [1]
+    context_switch.o        136
+    cstartup_M.o             30
+    main.o                  260       24
+    mpu.o                     2
+    scheduler.o             324             4'195
+    systick.o               100                 4
+    tasks.o                  92       48
+    @@kronos.o              334
+    ---------------------------------------------
+    Total:                1'278       72    4'199
+
+dl7M_tln.a: [2]
+    XShttio.o                 8        8        8
+    abort.o                   6
+    exit.o                    4
+    low_level_init.o          4
+    printf.o                 40
+    putchar.o                32
+    xfail_s.o                64                 4
+    xprintffull_nomb.o    3'766
+    xprout.o                 22
+    ---------------------------------------------
+    Total:                3'946        8       12
+
+m7M_tl.a: [3]
+    DblAddSub.o             590
+    DblCmpGe.o               52
+    DblCmpLe.o               52
+    DblDiv.o                582
+    DblMul.o                426
+    DblToS32.o               54
+    DblToU32.o               34
+    S32ToDbl.o               34
+    U32ToDbl.o               28
+    frexp.o                 112
+    ldexp.o                 314
+    ---------------------------------------------
+    Total:                2'278
+
+rt7M_tl.a: [4]
+    ABImemcpy.o             166
+    I64DivMod.o             560
+    I64DivZer.o               2
+    cexit.o                   4
+    cexit_2.o                10
+    cmain.o                  34
+    copy_init3.o             42
+    data_init.o              40
+    memchr.o                 88
+    strchr.o                 22
+    strlen.o                 54
+    vector_table_M.o         64
+    vectortrap_M.o            2
+    zero_init3.o             56
+    ---------------------------------------------
+    Total:                1'144
+
+shb_l.a: [5]
+    dwrite.o                 30
+    exit.o                   20
+    iarttio.o               124
+    iarwrite.o               34
+    iarwstd.o                32
+    write.o                  16
+    ---------------------------------------------
+    Total:                  256
+
+    Gaps                     30
+    Linker created                    36    8'192
+-------------------------------------------------
+    Grand Total:          8'932      116   12'403
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address    Size  Type      Object
+-----                       -------    ----  ----      ------
+.iar.init_table$$Base    0x800'2240           --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'2264           --   Gb  - Linker created -
+?main                    0x800'21e5          Code  Gb  cmain.o [4]
+BusFault_Handler         0x800'0f37          Code  Wk  vectortrap_M.o [4]
+CSTACK$$Base            0x2000'1078           --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'3078           --   Gb  - Linker created -
+DebugMon_Handler         0x800'0f37          Code  Wk  vectortrap_M.o [4]
+HardFault_Handler        0x800'0f37          Code  Wk  vectortrap_M.o [4]
+MemManage_Handler        0x800'1cab    0x38  Code  Gb  @@kronos.o [1]
+NMI_Handler              0x800'0f37          Code  Wk  vectortrap_M.o [4]
+PendSV_Handler           0x800'20f9          Code  Gb  context_switch.o [1]
+Region$$Table$$Base      0x800'2240           --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'2264           --   Gb  - Linker created -
+SVC_Handler              0x800'0f37          Code  Wk  vectortrap_M.o [4]
+SysTick_Handler          0x800'20af    0x2c  Code  Gb  systick.o [1]
+UsageFault_Handler       0x800'0f37          Code  Wk  vectortrap_M.o [4]
+_LC                      0x800'0041     0x6  Code  Lc  xprintffull_nomb.o [2]
+_LitobFullNoMb           0x800'0d15   0x114  Code  Lc  xprintffull_nomb.o [2]
+_PrintfFullNoMb          0x800'0047   0xc9e  Code  Gb  xprintffull_nomb.o [2]
+_Prout                   0x800'22f3    0x16  Code  Gb  xprout.o [2]
+_PutcharsFullNoMb        0x800'0e81    0x2e  Code  Lc  xprintffull_nomb.o [2]
+__NVIC_SetPriority       0x800'1f91    0x24  Code  Lc  main.o [1]
+__aeabi_cdcmple          0x800'1121          Code  Gb  DblCmpLe.o [3]
+__aeabi_cdrcmple         0x800'1155          Code  Gb  DblCmpGe.o [3]
+__aeabi_d2iz             0x800'12c5          Code  Gb  DblToS32.o [3]
+__aeabi_d2uiz            0x800'17b9          Code  Gb  DblToU32.o [3]
+__aeabi_ddiv             0x800'1571          Code  Gb  DblDiv.o [3]
+__aeabi_dmul             0x800'17f9          Code  Gb  DblMul.o [3]
+__aeabi_dsub             0x800'148d          Code  Gb  DblAddSub.o [3]
+__aeabi_i2d              0x800'12fd          Code  Gb  S32ToDbl.o [3]
+__aeabi_ldiv0            0x800'1bdd          Code  Gb  I64DivZer.o [4]
+__aeabi_memcpy           0x800'1009          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy4          0x800'1029          Code  Gb  ABImemcpy.o [4]
+__aeabi_memcpy8          0x800'1029          Code  Gb  ABImemcpy.o [4]
+__aeabi_ui2d             0x800'17dd          Code  Gb  U32ToDbl.o [3]
+__aeabi_uldivmod         0x800'19a5          Code  Gb  I64DivMod.o [4]
+__cmain                  0x800'21e5          Code  Gb  cmain.o [4]
+__dwrite                 0x800'2295    0x1e  Code  Gb  dwrite.o [5]
+__exit                   0x800'1be1    0x14  Code  Gb  exit.o [5]
+__iar_Fail_s             0x800'0f39    0x1c  Code  Gb  xfail_s.o [2]
+__iar_Memchr             0x800'0fb1          Code  Gb  memchr.o [4]
+__iar_Strchr             0x800'0f21          Code  Gb  strchr.o [4]
+__iar_close_ttio         0x800'1bf5    0x2c  Code  Gb  iarttio.o [5]
+__iar_copy_init3         0x800'0ef7    0x2a  Code  Gb  copy_init3.o [4]
+__iar_data_init3         0x800'21bd    0x28  Code  Gb  data_init.o [4]
+__iar_frexp              0x800'10bd          Code  Gb  frexp.o [3]
+__iar_frexp64            0x800'10b1          Code  Gb  frexp.o [3]
+__iar_frexpl             0x800'10bd          Code  Gb  frexp.o [3]
+__iar_get_ttio           0x800'1c21    0x4c  Code  Gb  iarttio.o [5]
+__iar_ldexp64            0x800'1189          Code  Gb  ldexp.o [3]
+__iar_lookup_ttioh       0x800'1c71     0x8  Code  Gb  XShttio.o [2]
+__iar_program_start      0x800'22d5          Code  Gb  cstartup_M.o [1]
+__iar_scalbln64          0x800'1189          Code  Gb  ldexp.o [3]
+__iar_scalbn64           0x800'1189          Code  Gb  ldexp.o [3]
+__iar_sh_stdout          0x800'22b3    0x20  Code  Gb  iarwstd.o [5]
+__iar_sh_write           0x800'221f    0x22  Code  Gb  iarwrite.o [5]
+__iar_ttio_handles      0x2000'0000     0x8  Data  Lc  XShttio.o [2]
+__iar_zero_init3         0x800'2183    0x38  Code  Gb  zero_init3.o [4]
+__low_level_init         0x800'2207     0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000          Data  Gb  vector_table_M.o [4]
+__write                  0x800'2285    0x10  Code  Gb  write.o [5]
+_call_main               0x800'21f1          Code  Gb  cmain.o [4]
+_exit                    0x800'2211          Code  Gb  cexit.o [4]
+_exit_2                  0x800'2215          Code  Gb  cexit_2.o [4]
+abort                    0x800'1bd5     0x6  Code  Gb  abort.o [2]
+ctx_cycles              0x2000'1058     0x4  Data  Gb  scheduler.o [1]
+ctx_end                 0x2000'1054     0x4  Data  Gb  scheduler.o [1]
+ctx_start               0x2000'1050     0x4  Data  Gb  scheduler.o [1]
+dwt_init                 0x800'1fb5    0x1c  Code  Gb  main.o [1]
+exit                     0x800'220b     0x4  Code  Gb  exit.o [2]
+frexp                    0x800'10b1          Code  Gb  frexp.o [3]
+frexpl                   0x800'10b1          Code  Gb  frexp.o [3]
+g_current_tcb           0x2000'1048     0x4  Data  Gb  scheduler.o [1]
+g_fault_cfsr            0x2000'1060     0x4  Data  Gb  scheduler.o [1]
+g_fault_mmfar           0x2000'1064     0x4  Data  Gb  scheduler.o [1]
+g_fault_occured         0x2000'1072     0x1  Data  Gb  scheduler.o [1]
+g_fault_pc              0x2000'105c     0x4  Data  Gb  scheduler.o [1]
+g_next_tcb              0x2000'104c     0x4  Data  Gb  scheduler.o [1]
+g_task_count            0x2000'1070     0x1  Data  Gb  scheduler.o [1]
+g_tasks                 0x2000'0008  0x1040  Data  Gb  scheduler.o [1]
+g_tick                  0x2000'1068     0x4  Data  Gb  systick.o [1]
+idle_task                0x800'1fd1    0x28  Code  Gb  main.o [1]
+kronos_task_init         0x800'1d1d    0xaa  Code  Gb  @@kronos.o [1]
+last_idx                0x2000'1071     0x1  Data  Lc  scheduler.o [1]
+ldexp                    0x800'1189          Code  Gb  ldexp.o [3]
+ldexpl                   0x800'1189          Code  Gb  ldexp.o [3]
+main                     0x800'1ff9    0x52  Code  Gb  main.o [1]
+memchr                   0x800'0fb1          Code  Gb  memchr.o [4]
+mpu_configure_task_region
+                         0x800'2181     0x2  Code  Gb  mpu.o [1]
+mpu_init                 0x800'1c79    0x32  Code  Gb  @@kronos.o [1]
+printf                   0x800'1e25    0x28  Code  Gb  printf.o [2]
+putchar                  0x800'2265    0x20  Code  Gb  putchar.o [2]
+scalbln                  0x800'1189          Code  Gb  ldexp.o [3]
+scalblnl                 0x800'1189          Code  Gb  ldexp.o [3]
+scalbn                   0x800'1189          Code  Gb  ldexp.o [3]
+scalbnl                  0x800'1189          Code  Gb  ldexp.o [3]
+scale                    0x800'0e29    0x46  Code  Lc  xprintffull_nomb.o [2]
+scheduler_add_task       0x800'1e4d    0x28  Code  Gb  scheduler.o [1]
+scheduler_pick_next      0x800'1e75    0x78  Code  Gb  scheduler.o [1]
+scheduler_wake_blocked_tasks
+                         0x800'1f25    0x4e  Code  Gb  scheduler.o [1]
+sec_hand                0x2000'106c     0x4  Data  Lc  xfail_s.o [2]
+sleep_ms                 0x800'1f07    0x1e  Code  Gb  scheduler.o [1]
+stack_paint              0x800'1dc9    0x16  Code  Gb  tasks.o [1]
+start_first_task         0x800'2149          Code  Gb  context_switch.o [1]
+strchr                   0x800'0f21          Code  Gb  strchr.o [4]
+strlen                   0x800'0f79          Code  Gb  strlen.o [4]
+systick_init             0x800'2095    0x1a  Code  Gb  systick.o [1]
+task_A                   0x800'1ddf    0x12  Code  Gb  tasks.o [1]
+task_B                   0x800'1df1    0x12  Code  Gb  tasks.o [1]
+task_C                   0x800'1e03    0x12  Code  Gb  tasks.o [1]
+yield                    0x800'1eed    0x1a  Code  Gb  scheduler.o [1]
+
+
+[1] = D:\Embedded Projects\KRONOS\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tl.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+   8'932 bytes of readonly  code memory
+     116 bytes of readonly  data memory
+  12'403 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

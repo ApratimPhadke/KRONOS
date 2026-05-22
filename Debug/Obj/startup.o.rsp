@@ -1,0 +1,1 @@
+﻿"D:\Embedded Projects\KRONOS\startup.s" "-OD:\Embedded Projects\KRONOS\Debug\Obj\\" -s+ -M<> -w+ -r --cpu Cortex-M4 --fpu None

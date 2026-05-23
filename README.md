@@ -545,5 +545,7 @@ This project required deep understanding of:
 # Author
 
 **Apratim**
-Electronics & Telecommunication Engineer
+
+Hardware Engineer
+
 Embedded Systems | RTOS | ARM Cortex-M | Low-Level Systems Programming

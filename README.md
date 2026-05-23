@@ -48,6 +48,8 @@ The project implements a complete low-level RTOS scheduler architecture includin
 ### Final multitasking execution
 
 <img width="1917" height="1140" alt="image" src="https://github.com/user-attachments/assets/490ff06b-fd2d-402c-8c0b-07c9e0b89705" />
+<img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/257ff969-cb46-4e8c-873c-373747a3c114" />
+
 
 
 ---
